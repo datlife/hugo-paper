@@ -10,18 +10,20 @@
 {{ $paginator := .Paginate (where .Site.RegularPages ".Params.type" "!=" "page") }}
 
 {{ range $index, $page := $paginator.Pages }}
-<article class="{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}first-entry{{ else }}post-entry{{ end }}">
-  <header class="entry-header">
-    <h2>{{ .Title }}</h2>
-  </header>
-  <section class="entry-content">
-   <p>{{ .Summary | plainify | htmlUnescape }}...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>{{ .Date.Format "January 2, 2006" }}</time>
-  </footer>
-  <a class="entry-link" href="{{ .Permalink }}"></a>
-</article>
+ {{if not .Params.hideFromList}}
+    <article class="{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}post-entry{{ else }}post-entry{{ end }}">
+      <header class="entry-header">
+        <h2>{{ .Title }}</h2>
+      </header>
+      <section class="entry-content">
+      <p>{{ .Summary | plainify | htmlUnescape }}...</p>
+      </section>
+      <footer class="entry-footer">
+        <time>{{ .Date.Format "January 2, 2006" }}</time>
+      </footer>
+      <a class="entry-link" href="{{ .Permalink }}"></a>
+    </article>
+  {{end}}
 {{ end }}
 
 {{ if gt $paginator.TotalPages 1 }}

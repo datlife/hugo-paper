@@ -15,18 +15,21 @@
     </title>
     <!-- Meta -->
     {{- if eq .Kind "page" }}
-    <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
+      <meta name="description" content="{{ .Summary }}">
+      <meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
     {{ else }}
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <meta name="author" content="{{ .Site.Params.author }}">
+      <meta name="description" content="{{ .Site.Params.description }}">
+      <meta name="author" content="{{ .Site.Params.author }}">
     {{ end -}}
+
     <!-- Styles -->
     <link href="{{ "an-old-hope.min.css" | absURL }}" rel="stylesheet">
     <link href="{{ "style.css" | absURL }}" rel="stylesheet">
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+    
     <!-- Generator -->
     {{ hugo.Generator }}
     <!-- RSS -->
