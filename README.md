@@ -1,4 +1,4 @@
-# Paper <sup><sup><sub>v4.5 (Dark Mode)</sub></sup></sup>
+# Paper <sup><sup><sub>v4.9 (Dark Mode)</sub></sup></sup>
 
 A simple, clean, flexible Hugo theme.
 
@@ -29,7 +29,7 @@ Hugo themes: https://themes.gohugo.io/hugo-paper/
 Inside the folder of your Hugo site, run:
 
 ```bash
-git clone https://github.com/nanxiaobei/hugo-paper themes/paper
+git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
 Then change in `config.toml`:
@@ -39,3 +39,13 @@ theme = "paper"
 ```
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
+
+## Dark Mode
+
+It's automatic, according to your system settings, or the natural time of day and night.
+
+## Pitiless Ads
+
+If you use WeChat, please try "**FUTAKE**". It's a WeChat mini app for your inspiration moments. 🌈
+
+![FUTAKE](https://s3.jpg.cm/2021/04/22/TDQuS.png)
